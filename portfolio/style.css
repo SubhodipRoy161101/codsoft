@@ -1,0 +1,151 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    transition: 1s;
+    font-family: 'Rubik';
+}
+
+.card-body>a{
+    color: #8f2fa0;
+}
+
+.about-text{
+    padding: 10%;
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+
+.skill-icon{
+    display: inline-block;
+    font-size: 40px;
+    padding: 10px;
+    background: #FBEAFF;
+    color: #a739ba;
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+    border-radius: 5rem;
+    margin-top: 10px;
+}
+.slides {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: unset;
+    padding: 5rem 2rem;
+    scroll-behavior: smooth;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.slides::-webkit-scrollbar {
+    display: none;
+  }
+
+.slides>div {
+    flex-shrink: 0;
+    width: 250px;
+    height: auto;
+    margin-right: 50px;
+    margin-bottom: 5px;
+    border-radius: 1.5rem;
+    background: #fff;
+    box-shadow: 0 0 25px rgb(0 0 0 / 30%);
+}
+
+.btn-primary{
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #a739ba;
+    --bs-btn-border-color: #a739ba;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #8f2fa0;
+    --bs-btn-hover-border-color: #8f2fa0;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #a739ba;
+    --bs-btn-active-border-color: #a739ba;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #FBEAFF;
+    --bs-btn-disabled-border-color: #FBEAFF;
+}
+
+.form-box{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 25px rgb(0 0 0 / 30%);
+}
+
+.form-det{
+    margin: 1rem;
+    padding: 1rem;
+    
+}
+
+.form-text-c{
+    border-radius: 0.8rem;
+}
+
+.footer>a{
+    margin: 0.2rem;
+    padding: 0.2rem;
+}
+
+.v-center{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.self-img-wrapper{
+    height: 90vh; 
+    position: relative;
+}
+
+.material-symbols-rounded {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 800,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.menu-slider{
+    background-color: #a739ba;
+    width: 30vw;
+    height: 100vh;
+    position: fixed;
+    right: -100%;
+    top: 0px;
+    z-index: 1;
+    border-radius: 3rem 0px 0px 3rem;
+}
+
+.menu-slider>ul{
+    text-decoration: none;
+    list-style-type: none;
+}
+.menu-slider>ul>li{
+    padding: 2rem;
+    font-size: 1rem;
+    font-family: 'Rubik';
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+@media only screen and (max-width: 720px) {
+    .self-img-wrapper{
+        height: 60vh; 
+        position: relative;
+    }
+
+    .menu-slider{
+        width: 60vw;
+    }
+  }
+
+/* .nav-logo{
+    padding-left: 2rem;
+  } */
