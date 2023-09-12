@@ -32,9 +32,32 @@
                 </button>
             </div>
         </div>
+        <div class="row justify-content-around" id="editNote"
+            style="position: fixed; top: 0px; z-index: 2; background: #fff; height: 0px; overflow: hidden;">
+
+            <div class="col-md-6 mt-5">
+                <h2>Edit Your Note</h2>
+                <form class="form-box" id="note-form">
+                    <div class="form-group form-det">
+                        <label>Title</label>
+                        <input id="editTitle" type="text" class="form-control form-text-c" placeholder="Title">
+                    </div>
+                    <div class="form-group form-det">
+                        <label>You thoughts</label>
+                        <textarea id="editDesc" class="form-control form-text-c" rows="3"></textarea>
+                    </div>
+                </form>
+                <div class="col-12 d-flex align-items-center justify-content-center pt-3">
+                    <button type="button" class="btn btn-primary" onclick="editNote(editId,editI)">
+                        Submit
+                    </button>
+                </div>
+            </div>
 </body>
 
 <script>
+    var editId = "";
+    var editI = 0;
     const form = document.getElementById('note-form');
     form.addEventListener('keypress', function (e) {
         if (e.keyCode === 13) {
@@ -61,6 +84,31 @@
         localStorage.setItem("todo", JSON.stringify(todo));
         location.reload();
     }
+
+
+    function showModal(id, i, title, desc) {
+        document.getElementById("editNote").style.height = "100vh";
+        document.getElementById("editTitle").value = title;
+        document.getElementById("editDesc").value = desc;
+        editId = id;
+        editI = i;
+    }
+
+    function editNote(id, i) {
+        console.log("Inside edit note");
+        console.log(id);
+        editTodo = todo.filter(todo => todo.id === id);
+        console.log(editTodo);
+        editTodo = editTodo[0];
+        editTodo.title = document.getElementById("editTitle").value;
+        editTodo.description = document.getElementById("editDesc").value;
+        console.log(editTodo);
+        todo[i] = editTodo;
+        console.log(todo);
+        localStorage.setItem("todo", JSON.stringify(todo));
+        location.reload();
+    }
+
     var displayDiv = "";
     for (i = 0; i < todo.length; i++) {
         displayDiv += `<div class="row justify-content-md-around">
@@ -73,9 +121,10 @@
                         ${todo[i].description}
                     </p>
                     <div class="d-flex align-items-center justify-content-around">
-                        <button class="btn btn-primary" onclick='deleteNote(${todo[i].id})'>
+                        <button class="btn btn-danger" onclick='deleteNote(${todo[i].id})'>
                             Delete
                         </button>
+                        <button class="btn btn-primary" onclick='showModal(${todo[i].id},${i},"${todo[i].title}","${todo[i].description}")'>Edit</button>
                     </div>
                 </div>
             </div>
