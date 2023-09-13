@@ -7,69 +7,10 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
-    <style>
-        .col-1>input {
-            margin: 10px;
-            /* width: 50%; */
-            margin-left: 25%;
-            margin-right: 25%;
-            background-color: rgb(158, 249, 255);
-            border: 0px;
-            border-radius: 10px;
-            height: 50px;
-            width: 50px;
-            box-shadow: 0px 1px 5px 1px rgba(207, 207, 207, 1);
-
-        }
-
-        .col-3>input {
-            margin-left: 5%;
-            margin-right: 5%;
-            margin-top: 10px;
-            background-color: #fff;
-            border-radius: 10px;
-            height: 50px;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="container">
-    <!-- <div class="row justify-content-center">
-        <div class="col-md-6">
-            <h1>Simple Calculator</h1>
-            <table>
-                <tr>
-                    <td colspan="4"><input type="text" id="display" disabled></td>
-                </tr>
-                <tr>
-                    <td><input class="btn-primary" type="button" value="1" onclick="dis('1')"></td>
-                    <td><input type="button" value="2" onclick="dis('2')"></td>
-                    <td><input type="button" value="3" onclick="dis('3')"></td>
-                    <td><input type="button" value="/" onclick="dis('/')"></td>
-                </tr>
-                <tr>
-                    <td><input type="button" value="4" onclick="dis('4')"></td>
-                    <td><input type="button" value="5" onclick="dis('5')"></td>
-                    <td><input type="button" value="6" onclick="dis('6')"></td>
-                    <td><input type="button" value="-" onclick="dis('-')"></td>
-                </tr>
-                <tr>
-                    <td><input type="button" value="7" onclick="dis('7')"></td>
-                    <td><input type="button" value="8" onclick="dis('8')"></td>
-                    <td><input type="button" value="9" onclick="dis('9')"></td>
-                    <td><input type="button" value="+" onclick="dis('+')"></td>
-                </tr>
-                <tr>
-                    <td><input type="button" value="C" onclick="cDis()"></td>
-                    <td><input type="button" value="0" onclick="dis('0')"></td>
-                    <td><input type="button" value="=" onclick="calc()"></td>
-                    <td><input type="button" value="*" onclick="dis('*')"></td>
-                </tr>
-            </table>
-        </div>
-    </div> -->
-
     <div class="row justify-content-center">
         <div class="col-3" style="margin-top: 2rem;">
             <input type="text" id="display" disabled>
@@ -102,23 +43,7 @@
         <div class="col-1"><input class="btn-primary" type="button" value="=" onclick="calc()"></div>
         <div class="col-1"><input class="btn-primary" type="button" value="+" onclick="dis('+')"></div>
     </div>
-    <script>
-        function dis(value) {
-            document.getElementById('display').value += value;
-        }
-
-        function cDis() {
-            document.getElementById('display').value = '';
-        }
-
-        function calc() {
-            try {
-                document.getElementById('display').value = eval(document.getElementById('display').value);
-            } catch (error) {
-                document.getElementById('display').value = 'Error';
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

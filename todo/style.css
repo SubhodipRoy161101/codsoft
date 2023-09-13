@@ -4,3 +4,14 @@
     margin: 1rem;
     box-shadow: 1px 1px 10px rgb(0 0 0 / 30%);
 }
+
+.v-center{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#todos{
+    overflow-y: scroll;
+    height: 90vh;
+}
